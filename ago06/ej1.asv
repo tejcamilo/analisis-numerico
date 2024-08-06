@@ -1,0 +1,23 @@
+clear all; close all; clc;
+
+f = @(x) x^3+4*x^2-10;
+a=1;
+b=2;
+
+
+err = 100;
+
+f(a)
+f(b)
+f(c1)
+
+while (err > 0.02)
+    c1=(a+b)/2;
+    if (f(a)*f(c1) < 0)
+        b = (a+c1)/2;
+    elseif (f(b)*f(c1) < 0)
+        a=(b+c1)/2;
+    end
+    err = abs((c1-c2)/c1);
+end
+
